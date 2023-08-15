@@ -11,6 +11,9 @@ on:
 env:
   MDBOOK_URL: https://github.com/rust-lang/mdBook/releases/download/v0.4.34/mdbook-v0.4.34-x86_64-unknown-linux-gnu.tar.gz
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
