@@ -106,6 +106,7 @@ extra:
             using our <a href="..." target="_blank" rel="noopener">feedback form</a>.
 nav:
   - Rust: rust.md
+  - Kubernetes: kubernetes.md
 markdown_extensions:
   - abbr
   - admonition
