@@ -37,13 +37,8 @@ jobs:
         run: |
           pip install -U pip -r requirements.txt
       - name: Build the doc
+        if: github.ref == 'refs/heads/main'
         env:
           GOOGLE_ANALYTICS_KEY: ${{ secrets.GOOGLE_ANALYTICS_KEY }}
         run: |
-          mkdocs build -c -d mkdocs
-      - name: Publish
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./mkdocs
-          keep_files: true
+          mike deploy --push --force --update-aliases edge

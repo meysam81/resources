@@ -32,7 +32,8 @@ jobs:
         env:
           GOOGLE_ANALYTICS_KEY: ${{ secrets.GOOGLE_ANALYTICS_KEY }}
         run: |
-          mike deploy --rebase --force --push --update-aliases ${{ github.ref_name }} latest
+          mike deploy --push --force --update-aliases ${{ github.ref_name }} latest
+          mike set-default --push --force  ${{ github.ref_name }}
 
   releaes:
     runs-on: ubuntu-latest
