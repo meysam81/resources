@@ -78,14 +78,13 @@ theme:
         icon: material/brightness-4
         name: Switch to system preference
 extra:
-  # homepage: .md
   social:
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/meysamazad
     - icon: fontawesome/brands/github
       link: https://github.com/meysam81
     - icon: fontawesome/brands/docker
       link: https://hub.docker.com/r/meysam81/
-    - link: https://linkedin.com/in/meysamazad
-      icon: fontawesome/brands/linkedin
   version:
     provider: mike
   analytics:
