@@ -40,4 +40,4 @@ jobs:
         env:
           GOOGLE_ANALYTICS_KEY: ${{ secrets.GOOGLE_ANALYTICS_KEY }}
         run: |
-          mkdocs gh-deploy --force
+          mkdocs gh-deploy --dirty --force

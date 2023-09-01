@@ -23,7 +23,7 @@ remote_branch: gh-pages
 remote_name: origin
 repo_name: meysam81/resources
 repo_url: https://github.com/meysam81/resources
-site_url: https://meysam81.github.io/resources/
+site_url: https://meysam81.github.io/resources
 site_author: Meysam <contact@meysam.io>
 site_description: This repo holds my learning resources
 site_dir: mkdocs
