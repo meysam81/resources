@@ -1,4 +1,5 @@
 name: build-site
+concurrency: ${{ github.sha }}
 
 on:
   pull_request:

@@ -1,4 +1,5 @@
 name: release
+concurrency: ${{ github.sha }}
 
 on:
   push:
@@ -30,7 +31,6 @@ jobs:
           GOOGLE_ANALYTICS_KEY: ${{ secrets.GOOGLE_ANALYTICS_KEY }}
         run: |
           mike deploy --rebase --force --push --update-aliases ${{ github.ref_name }} latest
-          mkdocs gh-deploy -c --force
 
   releaes:
     runs-on: ubuntu-latest
