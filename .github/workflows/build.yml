@@ -36,8 +36,14 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -U pip -r requirements.txt
-      - name: Publish the book
+      - name: Build the doc
         env:
           GOOGLE_ANALYTICS_KEY: ${{ secrets.GOOGLE_ANALYTICS_KEY }}
         run: |
-          mkdocs gh-deploy --dirty --force
+          mkdocs build -c -d mkdocs
+      - name: Publish
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./mkdocs
+          keep_files: true
