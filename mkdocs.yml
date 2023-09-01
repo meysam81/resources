@@ -58,7 +58,7 @@ theme:
     - search.share
     - search.suggest
     - toc.follow
-    - toc.integrate
+    # - toc.integrate
   font:
     text: Roboto
     code: Roboto Mono
