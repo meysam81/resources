@@ -21,6 +21,10 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -U pip -r requirements.txt
+      - name: Configure git
+        run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.actor }}@users.noreply.github.com"
       - name: Create version
         env:
           GOOGLE_ANALYTICS_KEY: ${{ secrets.GOOGLE_ANALYTICS_KEY }}
