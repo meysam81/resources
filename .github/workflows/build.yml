@@ -7,8 +7,6 @@ on:
   push:
     branches:
       - main
-    tags:
-      - v*
 
 permissions:
   contents: write
@@ -40,35 +38,3 @@ jobs:
           GOOGLE_ANALYTICS_KEY: ${{ secrets.GOOGLE_ANALYTICS_KEY }}
         run: |
           mkdocs gh-deploy -c --force
-
-  version:
-    if: github.ref == 'refs/tags/v*'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.x
-      - name: Install dependencies
-        run: |
-          pip install -U pip -r requirements.txt
-      - name: Create version
-        env:
-          GOOGLE_ANALYTICS_KEY: ${{ secrets.GOOGLE_ANALYTICS_KEY }}
-        run: |
-          mike deploy --push --update-aliases ${{ github.ref_name }} latest
-          mike set-default --push latest
-
-  releaes:
-    if: github.ref == 'refs/tags/v*'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Create release
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          gh release create ${{ github.ref_name }} -t ${{ github.ref_name }} --generate-notes
