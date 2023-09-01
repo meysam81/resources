@@ -1,3 +1,0 @@
-# Summary
-
-- [Rust](./rust.md)
