@@ -45,4 +45,4 @@ jobs:
         env:
           GOOGLE_ANALYTICS_KEY: ${{ secrets.GOOGLE_ANALYTICS_KEY }}
         run: |
-          mike deploy --push --force --update-aliases edge
+          mike deploy --push --update-aliases edge
